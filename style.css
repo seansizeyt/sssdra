@@ -1,0 +1,246 @@
+body {
+	margin: 0;
+	font-family: 'Inter', sans-serif;
+	background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+
+/* Частицы на фоне */
+#particles-js {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 2;
+}
+
+.main-card {
+	background: linear-gradient(145deg, #1e293b, #334155);
+	border-radius: 20px;
+	padding: 40px;
+	box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+	text-align: center;
+	width: 360px;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid rgba(255,255,255,0.1);
+}
+
+.main-card::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+	animation: shine 6s infinite linear;
+	z-index: 0;
+}
+
+.card-title {
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	color: #e2e8f0;
+	position: relative;
+	z-index: 2;
+	text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.promo-button {
+	display: block;
+	text-decoration: none;
+	margin-bottom: 20px;
+	padding: 16px;
+	border-radius: 14px;
+	color: white;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.promo-button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 200%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+	transition: left 0.5s ease;
+	z-index: -1;
+}
+
+.promo-button:hover::before {
+	left: 100%;
+}
+
+.promo-button:hover {
+	transform: scale(1.05) translateY(-2px);
+	box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.primary-button {
+	background: linear-gradient(45deg, #ec4899, #ef4444, #ec4899);
+	background-size: 200% 200%;
+	animation: gradientFlow 3s ease infinite;
+}
+
+.secondary-button {
+	background: linear-gradient(45deg, #3b82f6, #6366f1, #3b82f6);
+	background-size: 200% 200%;
+	animation: gradientFlow 3s ease infinite;
+}
+
+.tertiary-button {
+	background: linear-gradient(45deg, #10b981, #14b8a6, #10b981);
+	background-size: 200% 200%;
+	animation: gradientFlow 3s ease infinite;
+}
+
+.quaternary-button {
+	background: linear-gradient(45deg, #facc15, #fbbf24, #facc15);
+	background-size: 200% 200%;
+	animation: gradientFlow 3s ease infinite;
+}
+
+.main-button {
+	background: linear-gradient(45deg, #facc15, #fbbf24, #facc15);
+	background-size: 200% 200%;
+	animation: gradientFlow 3s ease infinite;
+}
+
+.asdasd-button {
+	background: linear-gradient(45deg, #8b5cf6, #a855f7, #8b5cf6);
+	background-size: 200% 200%;
+	animation: gradientFlow 3s ease infinite;
+}
+
+.button-content {
+	display: flex;
+	align-items: center;
+	position: relative;
+	z-index: 2;
+}
+
+.button-content i {
+	font-size: 28px;
+	margin-right: 14px;
+	transition: transform 0.3s ease;
+	filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+.promo-button:hover .button-content i {
+	transform: scale(1.1) rotate(5deg);
+}
+
+.button-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.main-text {
+	font-size: 18px;
+	font-weight: 700;
+	transition: transform 0.3s ease;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.promo-button:hover .main-text {
+	transform: translateX(5px);
+}
+
+.bonus-text {
+	font-size: 14px;
+	font-weight: 400;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+@keyframes gradientFlow {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+@keyframes shine {
+	0% { transform: rotate(0deg) translate(-50%, -50%); }
+	100% { transform: rotate(360deg) translate(-50%, -50%); }
+}
+
+
+@keyframes ripple {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
+
+/* Анимация мерцания звезд */
+@keyframes twinkle {
+	0%, 100% { opacity: 0.3; }
+	50% { opacity: 1; }
+}
+
+/* Плавный параллакс эффект */
+.main-card {
+	transition: transform 0.1s ease-out;
+	transform-style: preserve-3d;
+}
+
+/* Убрать резкие движения */
+.main-card:hover {
+	transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+/* Стили для огоньков */
+.firefly {
+	position: absolute;
+	pointer-events: none;
+	z-index: 1000;
+	border-radius: 50%;
+	background: radial-gradient(circle, #fff 30%, transparent 70%);
+	animation: fireflyFloat 2s ease-out forwards;
+	filter: blur(1px);
+	opacity: 0;
+}
+
+@keyframes fireflyFloat {
+	0% {
+		opacity: 0.8;
+		transform: translateY(0) scale(0.8);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(-15px) scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-30px) scale(0.5);
+	}
+}
+
+/* Эффект свечения для кнопок при наведении */
+.promo-button:hover {
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+	0 8px 25px rgba(0, 0, 0, 0.3);
+}
